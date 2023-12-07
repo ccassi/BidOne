@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/angular-form-app/.vscode
+/AngularApp1/.vs/AngularApp1
+/AngularApp1/angularapp1.client/.vscode
+/AngularApp1/angularapp1.client/obj/Debug
+/AngularApp1/AngularApp1.Server/bin/
+/AngularApp1/AngularApp1.Server/obj

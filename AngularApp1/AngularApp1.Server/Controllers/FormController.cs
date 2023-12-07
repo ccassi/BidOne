@@ -16,10 +16,10 @@ namespace AngularApp1.Server.Controllers
                 string jsonData = JsonConvert.SerializeObject(formData);
                 System.IO.File.WriteAllText("data.json", jsonData);
 
-                return Ok("Data saved successfully");
+                return Ok(new { Message = "Data saved successfully" });
             }
 
-            return BadRequest("Invalid data");
+            return BadRequest(new { Message = "Invalid data" });
         }
     }
 

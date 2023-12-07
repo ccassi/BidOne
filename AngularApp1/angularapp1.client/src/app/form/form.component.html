@@ -1,9 +1,17 @@
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
   <label for="firstName">First Name:</label>
-  <input type="text" id="firstName" [(ngModel)]="formData.firstName" required />
+  <input type="text" id="firstName" name="first" [(ngModel)]="formData.firstName" required />
 
   <label for="lastName">Last Name:</label>
-  <input type="text" id="lastName" [(ngModel)]="formData.lastName" required />
+  <input type="text" id="lastName" name="last" [(ngModel)]="formData.lastName" required />
 
-  <button type="submit">Submit</button>
+  <div *ngIf="myForm.invalid && (myForm.dirty || myForm.touched); else elseBlock">
+    <p style="color: red;">Please fill out the required fields.</p>
+  </div>
+  <ng-template #elseBlock><p style="color: white;">Fill</p></ng-template>
+
+  <div>
+    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+  </div>
+
 </form>
